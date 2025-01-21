@@ -160,6 +160,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8dee33018ffaf47bba601c9e16e9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 0
+  nowHp: 0
+  att: 0
+  speed: 10
+  jumpForce: 30
 --- !u!1 &1445325051
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +270,7 @@ GameObject:
   - component: {fileID: 2088293774}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -432,10 +437,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2530299591201285340, guid: cd9e2176aa30aad4586015ee82999e12, type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530299591201285340, guid: cd9e2176aa30aad4586015ee82999e12, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6652272153571404301, guid: cd9e2176aa30aad4586015ee82999e12, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652272153571404301, guid: cd9e2176aa30aad4586015ee82999e12, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
