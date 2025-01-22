@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         Move();
         Jump();
         Attack();
+        Roll();
     }
 
     // Update is called once per frame
@@ -80,7 +81,17 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(AttackCo()); 
         }
     }
-    
+
+    void Roll()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (true)
+            {
+                StartCoroutine(RollCo());
+            }
+        }
+    }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -96,8 +107,17 @@ public class PlayerController : MonoBehaviour
         _isAttacking = true;
         _animator.SetTrigger("isPlayerAttack");
         print("att");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
         _isAttacking = false;
+    }
+
+    IEnumerator RollCo()
+    {
+        _rigidbody.velocity = new Vector2(_rigidbody.velocity.x,0);
+        _isRolling = true;
+        _animator.SetTrigger("isPlayerRoll");
+        yield return new WaitForSeconds(0.5f);
+        _isRolling = false;
     }
     
 }
