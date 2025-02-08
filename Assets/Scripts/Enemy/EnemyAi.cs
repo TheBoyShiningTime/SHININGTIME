@@ -53,7 +53,7 @@ public class EnemyAI : MonoBehaviour
     
     void FaceTarget()
     {
-        _spriteRenderer.flipX = target.position.x < transform.position.x;
+        _spriteRenderer.flipX = target.position.x > transform.position.x;
     }
     
     void AttackTarget()
